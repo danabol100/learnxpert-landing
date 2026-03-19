@@ -1,0 +1,35 @@
+//colors
+$color-bg-tonal: #394264;
+$color-bg-dark: #252b42;
+$color-bg-light: #ffffff;
+$color-text: #ffffff;
+$color-text-hover: #31a0fe;
+$color-second-text: #ececec;
+$color-primary: #ec5c2e;
+
+//fonts
+$font-primary: "Montserrat", sans-serif;
+$font-secondary: "Open Sans", sans-serif;
+
+:root {
+  --color-bg-tonal: #{$color-bg-tonal};
+  --color-bg-dark: #{$color-bg-dark};
+  --color-bg-light: #{$color-bg-light};
+  --color-text: #{$color-text};
+  --color-text-hover: #{$color-text-hover};
+  --color-second-text: #{$color-second-text};
+  --color-primary: #{$color-primary};
+
+  --font-primary: #{$font-primary};
+  --font-secondary: #{$font-secondary};
+}
+
+body {
+  font-family: var(--font-primary, sans-serif);
+}
+[class*="__container"] {
+  width: 100%;
+  max-width: 89.375rem;
+  padding-inline: 0.9375rem;
+  margin-inline: auto;
+}
