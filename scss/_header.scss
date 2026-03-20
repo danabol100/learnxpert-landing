@@ -121,3 +121,7 @@ html[data-menu-open] .icon-menu::after {
   transform: rotate(45deg) translateY(50%);
   bottom: 50%;
 }
+
+html[data-menu-open] {
+  overflow: hidden;
+}

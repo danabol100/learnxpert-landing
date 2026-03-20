@@ -5,6 +5,7 @@
 @use "header";
 @use "hero";
 @use "feature";
+@use "product";
 
 main {
   @include adaptiveValue("padding-top", 96, 60, 0, 1392, 670);

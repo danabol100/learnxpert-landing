@@ -1,0 +1,156 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.product {
+  background-color: $color-bg-dark;
+  @include adaptiveValue(padding-block, 100, 50); // .product__container
+  &__container {
+    max-width: 1093px;
+  }
+
+  // .product__header
+
+  &__header {
+    color: $color-bg-light;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include adaptiveValue(margin-bottom, 50, 20, 0, 1096, 750);
+  }
+
+  // .product__title
+
+  &__title {
+    font-family: "Open Sans", sans-serif;
+    @include adaptiveValue(font-size, 40, 26);
+    max-width: 355px;
+    letter-spacing: 0.02em;
+    line-height: 1.42;
+    font-weight: 600;
+  }
+
+  // .product__link
+
+  &__link {
+    letter-spacing: 0.02em;
+    line-height: 2;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 32px;
+    transition: color 0.3s;
+    margin-left: auto;
+    @media (hover: hover) {
+      &:hover {
+        color: $color-text-hover;
+      }
+    }
+  }
+
+  // .product__cards
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px 17px;
+  }
+
+  // .product__card
+
+  &__card {
+    background-color: $color-bg-light;
+    display: flex;
+    flex: 1 1 343px;
+
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  // .product__card-image
+
+  &__card-image {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      border: 8px solid $color-bg-light;
+    }
+  }
+  // .product__card-icon
+  &__card-icon {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: $color-bg-light;
+    border-radius: 50%;
+    transition: all 0.3s;
+    @media (hover: hover) {
+      &:hover {
+        background-color: #d4eaf6;
+      }
+    }
+  }
+
+  // .product__card-body
+
+  &__card-body {
+    padding: 24px;
+  }
+
+  // .product__card-title
+
+  &__card-title {
+    color: $color-bg-dark;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+  }
+
+  // .product__card-subtitle
+
+  &__card-subtitle {
+    color: $color-text-card;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.71;
+    margin-bottom: 13px;
+  }
+
+  // .product__card-action
+
+  &__card-action {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 13px;
+  }
+
+  // .product__card-star
+
+  &__card-star {
+    width: 0.9rem;
+    height: 0.8625rem;
+    cursor: pointer;
+    color: $color-text-card;
+    & use {
+      fill: currentColor;
+      stroke: none;
+    }
+
+    &:hover {
+      color: #23856d;
+    }
+  }
+
+  // .product__card-comment
+
+  &__card-comment {
+    font-size: 12px;
+    color: #bdbdbd;
+  }
+}
