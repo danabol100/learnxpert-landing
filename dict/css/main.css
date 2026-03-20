@@ -1,17 +1,3 @@
-@font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-VariableFont.woff2") format("woff2");
-  font-display: swap;
-  font-style: normal;
-  font-weight: 100 900;
-}
-@font-face {
-  font-family: "Open Sans";
-  src: url("../fonts/OpenSans-VariableFont.woff2") format("woff2");
-  font-display: swap;
-  font-style: normal;
-  font-weight: 100 900;
-}
 :root {
   --color-bg-tonal: #394264;
   --color-bg-dark: #252b42;
@@ -30,9 +16,39 @@ body {
 
 [class*=__container] {
   width: 100%;
-  max-width: 89.375rem;
+  max-width: 1076px;
   padding-inline: 0.9375rem;
   margin-inline: auto;
+}
+
+.btn {
+  font-size: 14px;
+  display: inline-block;
+  font-weight: 600;
+  background-color: #ffffff;
+  color: #252b42;
+  padding: 0.375rem 1.5rem;
+  border-radius: 1.5625rem;
+  line-height: 2;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media (max-width: 41.875em) {
+  .btn--header {
+    margin-left: auto;
+  }
+}
+.btn--hero {
+  padding: 0.625rem 2.5rem;
+}
+.btn--active {
+  background-color: #ec5c2e;
+}
+@media (hover: hover) {
+  .btn:hover {
+    color: #ffffff;
+    background-color: #31a0fe;
+  }
 }
 
 *,
@@ -131,26 +147,6 @@ button {
   font-family: var(--font-secondary);
   line-height: 1.5;
 }
-.header__btn {
-  background-color: #ffffff;
-  color: #252b42;
-  padding: 0.375rem 1.5rem;
-  border-radius: 1.5625rem;
-  line-height: 2;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-@media (max-width: 41.875em) {
-  .header__btn {
-    margin-left: auto;
-  }
-}
-@media (hover: hover) {
-  .header__btn:hover {
-    color: #ffffff;
-    background-color: #31a0fe;
-  }
-}
 .header__menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -248,4 +244,209 @@ html[data-menu-open] .icon-menu::after {
   -webkit-transform: rotate(45deg) translateY(50%);
           transform: rotate(45deg) translateY(50%);
   bottom: 50%;
+}
+
+.hero {
+  background-color: #394264;
+  color: #ffffff;
+}
+.hero__body {
+  padding-block: 1.875rem 3.9375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1.25rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (width < 61.5em) {
+  .hero__body {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.hero__content {
+  padding-top: 3.3125rem;
+}
+.hero__title {
+  max-width: 27.5rem;
+  font-family: "Open Sans", sans-serif;
+}
+@media (min-width: 88.875em) {
+  .hero__title {
+    font-size: 48px;
+  }
+}
+@media (min-width: 20em) and (max-width: 88.875em) {
+  .hero__title {
+    font-size: clamp( 30px , 24.7731397459px  +  1.6333938294vw , 48px );
+  }
+}
+@media (max-width: 20em) {
+  .hero__title {
+    font-size: 30px;
+  }
+}
+.hero__title {
+  font-weight: 800;
+  line-height: 1.33;
+  margin-bottom: 1.5625rem;
+  letter-spacing: 0.02em;
+}
+.hero__title span {
+  color: #ec5c2e;
+}
+.hero__description {
+  max-width: 22.3125rem;
+  font-size: 0.875rem;
+  line-height: 1.42;
+  color: #ececec;
+  letter-spacing: 0.02em;
+  font-weight: 300;
+  margin-bottom: 3.375rem;
+}
+.hero__description p:not(:last-child) {
+  padding-bottom: 0.625rem;
+}
+.hero__action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3.25rem;
+}
+@media (max-width: 26.875em) {
+  .hero__action {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+}
+.hero__badge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.1875rem;
+}
+@media (max-width: 26.875rem) {
+  .hero__badge {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.hero__body-badge {
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  line-height: 1.33;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.625rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.hero__image {
+  position: relative;
+}
+.hero__image img {
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+.hero__image::after {
+  content: "";
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  width: 85%;
+  aspect-ratio: 1/1;
+  background-color: #31a0fe;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #ffffff;
+}
+
+.feature {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(62.2%, #394264), color-stop(62.2%, #252b42));
+  background: linear-gradient(to bottom, #394264 62.2%, #252b42 62.2%);
+}
+.feature__cards {
+  padding-block: 1.875rem 3.9375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.9375rem;
+  overflow-x: auto;
+  margin-inline: -0.9375rem;
+}
+.feature__card {
+  background-color: #ffffff;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 20.5rem;
+          flex: 1 0 20.5rem;
+  color: #252b42;
+  text-align: center;
+  padding: 2.1875rem 2.9063rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.feature__card-image {
+  width: 4.5rem;
+  height: 4.5rem;
+  display: block;
+}
+.feature__card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+.feature__card-text {
+  font-size: 0.875rem;
+  line-height: 1.42;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 87em) {
+  main {
+    padding-top: 96px;
+  }
+}
+@media (min-width: 41.875em) and (max-width: 87em) {
+  main {
+    padding-top: clamp( 60px , 26.5927977839px  +  4.9861495845vw , 96px );
+  }
+}
+@media (max-width: 41.875em) {
+  main {
+    padding-top: 60px;
+  }
 }/*# sourceMappingURL=main.css.map */

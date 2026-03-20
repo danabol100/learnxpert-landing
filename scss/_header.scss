@@ -31,24 +31,6 @@
   &__image-logo {
   }
 
-  &__btn {
-    background-color: $color-bg-light;
-    color: $color-bg-dark;
-    padding: 0.375rem 1.5rem;
-    border-radius: 1.5625rem;
-    line-height: 2;
-    transition: all 0.3s;
-    @media (max-width: 41.875em) {
-      margin-left: auto;
-    }
-    &:hover {
-      @media (hover: hover) {
-        color: $color-text;
-        background-color: $color-text-hover;
-      }
-    }
-  }
-
   &__menu {
     display: flex;
     gap: 2rem;

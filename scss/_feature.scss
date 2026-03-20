@@ -1,0 +1,59 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.feature {
+  background: linear-gradient(
+    to bottom,
+    $color-bg-tonal 62.2%,
+    $color-bg-dark 62.2%
+  );
+  // .feature__cards
+
+  &__cards {
+    padding-block: 1.875rem 3.9375rem;
+    display: flex;
+    gap: 1.9375rem;
+    overflow-x: auto;
+    margin-inline: -0.9375rem;
+  }
+
+  // .feature__card
+
+  &__card {
+    background-color: $color-bg-light;
+    flex: 1 0 20.5rem;
+    color: $color-bg-dark;
+    text-align: center;
+    padding: 2.1875rem 2.9063rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+  }
+
+  // .feature__card-image
+
+  &__card-image {
+    width: 4.5rem;
+    height: 4.5rem;
+    display: block;
+  }
+
+  // .feature__card-title
+
+  &__card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+  }
+
+  // .feature__card-text
+
+  &__card-text {
+    font-size: 0.875rem;
+    line-height: 1.42;
+    letter-spacing: 0.02em;
+  }
+}

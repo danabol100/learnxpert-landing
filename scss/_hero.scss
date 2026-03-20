@@ -1,0 +1,135 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.hero {
+  //   font-family: var(--font-primary);
+  background-color: $color-bg-tonal;
+  color: $color-text;
+  // .hero__container
+
+  &__container {
+  }
+
+  // .hero__body
+
+  &__body {
+    padding-block: 1.875rem 3.9375rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    align-items: center;
+    @media (width < 61.5em) {
+      justify-content: center;
+    }
+  }
+
+  // .hero__content
+
+  &__content {
+    padding-top: 3.3125rem;
+  }
+
+  // .hero__title
+
+  &__title {
+    max-width: 27.5rem;
+    font-family: "Open Sans", sans-serif;
+
+    @include adaptiveValue(font-size, 48, 30);
+    font-weight: 800;
+    line-height: 1.33;
+    margin-bottom: 1.5625rem;
+    letter-spacing: 0.02em;
+    span {
+      color: $color-primary;
+    }
+  }
+
+  // .hero__description
+
+  &__description {
+    max-width: 22.3125rem;
+    font-size: 0.875rem;
+    line-height: 1.42;
+    color: $color-second-text;
+    letter-spacing: 0.02em;
+    font-weight: 300;
+    margin-bottom: 3.375rem;
+    p:not(:last-child) {
+      padding-bottom: 0.625rem;
+    }
+  }
+
+  // .hero__action
+
+  &__action {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3.25rem;
+    @media (max-width: 26.875em) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  // .hero__btn
+
+  &__btn {
+  }
+
+  // .hero__btn--active
+
+  &__btn--active {
+  }
+
+  // .hero__badge
+
+  &__badge {
+    display: flex;
+    gap: 1.1875rem;
+    @media (max-width: 26.875rem) {
+      justify-content: center;
+    }
+  }
+
+  // .hero__body-badge
+
+  &__body-badge {
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    line-height: 1.33;
+    font-weight: 300;
+    display: flex;
+    gap: 0.625rem;
+    align-items: center;
+  }
+
+  // .hero__image
+
+  &__image {
+    position: relative;
+    img {
+      display: block;
+      position: relative;
+      z-index: 2;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 57%;
+      left: 50%;
+      width: 85%;
+      aspect-ratio: 1 / 1;
+      background-color: $color-text-hover;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+  }
+}
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: $color-bg-light;
+}
