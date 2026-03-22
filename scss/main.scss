@@ -6,6 +6,7 @@
 @use "hero";
 @use "feature";
 @use "product";
+@use "benefits";
 
 main {
   @include adaptiveValue("padding-top", 96, 60, 0, 1392, 670);
