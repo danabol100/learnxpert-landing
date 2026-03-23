@@ -3,6 +3,16 @@
 window.addEventListener("load", load);
 
 function load() {
+  const header = document.querySelector(".header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 20) {
+      header.classList.add("header--scroll-state");
+    } else {
+      header.classList.remove("header--scroll-state");
+    }
+  });
+
   const burger = document.querySelector(".icon-menu");
   const menu = document.querySelector(".header__menu");
 
@@ -17,13 +27,28 @@ function load() {
   let current = 0;
 
   setInterval(() => {
-    // убираем active у всех
     cards.forEach((card) => card.classList.remove("benefits__card--active"));
 
-    // добавляем текущей
     cards[current].classList.add("benefits__card--active");
 
-    // переходим к следующей
     current = (current + 1) % cards.length;
-  }, 2000); // 2 секунды
+  }, 2000);
+
+  const cardsPricing = document.querySelectorAll(".card-plan");
+
+  const defaultCard = document.querySelector(".card-plan--active");
+
+  cardsPricing.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      cardsPricing.forEach((c) => c.classList.remove("card-plan--active"));
+
+      card.classList.add("card-plan--active");
+    });
+
+    card.addEventListener("mouseleave", () => {
+      cardsPricing.forEach((c) => c.classList.remove("card-plan--active"));
+
+      defaultCard.classList.add("card-plan--active");
+    });
+  });
 }

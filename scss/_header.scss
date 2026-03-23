@@ -11,12 +11,14 @@
   z-index: 100;
   top: 0;
   left: 0;
+  @include adaptiveValue(padding-block, 28, 10, 0, 1430, 670);
+  transition: all 0.3s;
 
   &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include adaptiveValue(padding-block, 28, 10, 0, 1430, 670);
+
     gap: 1.25rem;
   }
 
@@ -124,4 +126,9 @@ html[data-menu-open] .icon-menu::after {
 
 html[data-menu-open] {
   overflow: hidden;
+}
+
+.header--scroll-state {
+  padding-block: 10px;
+  opacity: 0.9;
 }
