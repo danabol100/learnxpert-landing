@@ -1,0 +1,69 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.banner {
+  background-color: $color-bg-tonal;
+  @include adaptiveValue(padding-block, 75, 40);
+
+  // .banner__container
+  &__container {
+    max-width: 55.875rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+
+  // .banner__body
+
+  &__body {
+    flex: 0 1 25.3125rem;
+    @media (max-width: 46.875em) {
+      flex-grow: 1;
+    }
+  }
+
+  // .banner__title
+
+  &__title {
+    color: $color-text;
+    @include adaptiveValue(font-size, 40, 30);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.42;
+    margin-bottom: 1.5625rem;
+  }
+
+  // .banner__description
+
+  &__description {
+    line-height: 1.42;
+    letter-spacing: 0.02em;
+    color: $color-second-text;
+  }
+
+  // .banner__btn
+
+  &__btn {
+    color: $color-text;
+    background-color: $color-primary;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 2;
+    padding: 0.625rem 2rem;
+    border-radius: 1.5rem;
+    transition: background-color 0.3s;
+    text-align: center;
+    @media (max-width: 46.875em) {
+      width: 100%;
+      display: inline-block;
+    }
+    @media (hover: hover) {
+      &:hover {
+        background-color: $color-text-hover;
+      }
+    }
+  }
+}

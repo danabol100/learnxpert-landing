@@ -35,20 +35,28 @@ function load() {
   }, 2000);
 
   const cardsPricing = document.querySelectorAll(".card-plan");
-
   const defaultCard = document.querySelector(".card-plan--active");
 
-  cardsPricing.forEach((card) => {
-    card.addEventListener("mouseenter", () => {
-      cardsPricing.forEach((c) => c.classList.remove("card-plan--active"));
+  if (window.matchMedia("(hover: hover)").matches) {
+    cardsPricing.forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        cardsPricing.forEach((c) => c.classList.remove("card-plan--active"));
+        card.classList.add("card-plan--active");
+      });
 
-      card.classList.add("card-plan--active");
+      card.addEventListener("mouseleave", () => {
+        cardsPricing.forEach((c) => c.classList.remove("card-plan--active"));
+        defaultCard.classList.add("card-plan--active");
+      });
     });
+  }
 
-    card.addEventListener("mouseleave", () => {
-      cardsPricing.forEach((c) => c.classList.remove("card-plan--active"));
-
-      defaultCard.classList.add("card-plan--active");
+  if (window.matchMedia("(hover: none)").matches) {
+    cardsPricing.forEach((card) => {
+      card.addEventListener("click", () => {
+        cardsPricing.forEach((c) => c.classList.remove("card-plan--active"));
+        card.classList.add("card-plan--active");
+      });
     });
-  });
+  }
 }
