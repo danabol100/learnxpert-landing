@@ -24,8 +24,7 @@
     @media (max-width: 50em) {
       flex-direction: row;
       justify-content: space-between;
-      align-items: center;
-      padding-right: 0.9375rem;
+      // align-items: center;
     }
   }
   // .footer__wrapper
@@ -59,9 +58,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1.25rem;
-    @media (max-width: 31.25em) {
-      flex-direction: column;
-    }
+    // @media (max-width: 31.25em) {
+    //   flex-direction: column;
+    // }
   }
 
   // .footer__social-link
@@ -80,6 +79,10 @@
       &:hover {
         color: $color-text-hover;
       }
+    }
+    @media (max-width: 600px) {
+      width: 32px;
+      height: 32px;
     }
   }
 
