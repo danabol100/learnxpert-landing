@@ -9,6 +9,7 @@
 @use "benefits";
 @use "pricing";
 @use "banner";
+@use "footer";
 
 main {
   @include adaptiveValue("padding-top", 96, 60, 0, 1392, 670);

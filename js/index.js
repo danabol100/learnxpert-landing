@@ -18,8 +18,36 @@ function load() {
 
   document.addEventListener("click", (e) => {
     const target = e.target;
+
+    //бургер
     if (target.closest(".icon-menu")) {
       document.documentElement.toggleAttribute("data-menu-open");
+    }
+    //футер
+    if (target.closest(".footer-column__title")) {
+      if (window.innerWidth > 600) return;
+
+      const currentTitle = target.closest(".footer-column__title");
+      const currentList = currentTitle.nextElementSibling;
+
+      const activeTitle = document.querySelector(
+        ".footer-column__title[data-footer-menu-open]",
+      );
+
+      if (activeTitle && activeTitle !== currentTitle) {
+        activeTitle.removeAttribute("data-footer-menu-open");
+        activeTitle.nextElementSibling.style.height = "0px";
+      }
+
+      const isOpen = currentTitle.hasAttribute("data-footer-menu-open");
+
+      if (isOpen) {
+        currentTitle.removeAttribute("data-footer-menu-open");
+        currentList.style.height = "0px";
+      } else {
+        currentTitle.setAttribute("data-footer-menu-open", "");
+        currentList.style.height = currentList.scrollHeight + "px";
+      }
     }
   });
   const cards = document.querySelectorAll(".benefits__card");
