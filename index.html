@@ -8,6 +8,8 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./dict/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <script src="js/index.js" defer></script>
     <title>LearnXpert</title>
 </head>
@@ -534,6 +536,112 @@
                     </div>
                 </div>
             </section>
+            <section class="slider">
+                <div class="slider__container">
+                    <h2 class="slider__title">What Our Learners Say</h2>
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="swiper-slide__body">
+                                    <div class="swiper-slide__user-icon">
+                                        <img src="./assets/slider-avatar-1.svg" alt="user1">
+                                    </div>
+                                    <p class="swiper-slide__user-name">Sophia T</p>
+                                    <p class="swiper-slide__user-prof">Director, Producer</p>
+                                    <div class="swiper-slide__card-action">
+                                        <svg class="swiper-slide__card-star">
+                                            <use href="./sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg class="swiper-slide__card-star">
+                                            <use href="./sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg class="swiper-slide__card-star">
+                                            <use href="./sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg class="swiper-slide__card-star">
+                                            <use href="./sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg class="swiper-slide__card-star">
+                                            <use href="./sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                    <p class="swiper-slider__comment">I'm impressed by the quality of courses and the
+                                        support from LearnXpert's team. Highly recommended!</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide__body">
+                                    <div class="swiper-slide__user-icon">
+                                        <img src="./assets/slider-avatar-2.svg" alt="user1">
+                                    </div>
+                                    <p class="swiper-slide__user-name">Jack H</p>
+                                    <p class="swiper-slide__user-prof">Ceo, Producer</p>
+                                    <div class="swiper-slide__card-action">
+                                        <svg class="swiper-slide__card-star">
+                                            <use href="./sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg class="swiper-slide__card-star">
+                                            <use href="./sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg class="swiper-slide__card-star">
+                                            <use href="./sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg class="swiper-slide__card-star">
+                                            <use href="./sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg class="swiper-slide__card-star">
+                                            <use href="./sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                    <p class="swiper-slider__comment">The courses exceeded my expectations, and the
+                                        support team was always helpful and responsive. LearnXpert truly delivers a
+                                        great learning experience!</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide__body">
+                                    <div class="swiper-slide__user-icon">
+                                        <img src="./assets/slider-avatar-3.svg" alt="user1">
+                                    </div>
+                                    <p class="swiper-slide__user-name">Viola S</p>
+                                    <p class="swiper-slide__user-prof">PH, Manager</p>
+                                    <div class="swiper-slide__card-action">
+                                        <svg class="swiper-slide__card-star">
+                                            <use href="./sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg class="swiper-slide__card-star">
+                                            <use href="./sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg class="swiper-slide__card-star">
+                                            <use href="./sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg class="swiper-slide__card-star">
+                                            <use href="./sprites.svg#icon-star"></use>
+                                        </svg>
+                                        <svg class="swiper-slide__card-star">
+                                            <use href="./sprites.svg#icon-star"></use>
+                                        </svg>
+                                    </div>
+                                    <p class="swiper-slider__comment">The courses exceeded my expectations, and the
+                                        support team was always helpful and responsive. LearnXpert truly delivers a
+                                        great learning experience!
+                                        The courses exceeded my expectations, and the
+                                        support team was always helpful and responsive. LearnXpert truly delivers a
+                                        great learning experience!</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <img src="./assets/slider-avatar-2.svg" alt="" class="slider__image slider__image--2">
+                    <img src="./assets/slider-avatar-3.svg" alt="" class="slider__image slider__image--3">
+                    <img src="./assets/slider-avatar-4.svg" alt="" class="slider__image slider__image--4">
+                    <img src="./assets/slider-avatar-5.svg" alt="" class="slider__image slider__image--5">
+                    <img src="./assets/slider-avatar-6.svg" alt="" class="slider__image slider__image--6">
+                </div>
+            </section>
             <div class="banner">
                 <div class="banner__container">
                     <div class="banner__body">
@@ -549,6 +657,7 @@
                     </a>
                 </div>
             </div>
+
         </main>
         <div class="footer">
             <div class="footer__container">
@@ -630,6 +739,20 @@
             <p>Made With Love By Figmaland All Right Reserved </p>
         </div>
     </div>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+
+            slidesPerView: 1,
+            autoHeight: true,
+            loop: false,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+    </script>
+
 </body>
 
 </html>
