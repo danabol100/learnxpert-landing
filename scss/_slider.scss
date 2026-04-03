@@ -10,12 +10,8 @@
 }
 
 .swiper-slide {
+  display: block;
   text-align: center;
-  font-size: 18px;
-  background: #444;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .swiper-slide img {
@@ -34,9 +30,9 @@
 
   &__container {
     position: relative;
-    padding-left: clamp(20px, 12vw, 150px);
-    padding-right: clamp(20px, 12vw, 150px);
-    @media (max-width: 768px) {
+    padding-left: clamp(1.25rem, 12vw, 9.375rem);
+    padding-right: clamp(1.25rem, 12vw, 9.375rem);
+    @media (max-width: 48em) {
       padding-left: 0;
       padding-right: 0;
     }
@@ -60,8 +56,8 @@
   &__image {
     position: absolute;
     z-index: 1;
-    max-width: clamp(50px, 8vw, 120px);
-    @media (max-width: 768px) {
+    max-width: clamp(3.125rem, 8vw, 7.5rem);
+    @media (max-width: 48em) {
       display: none;
     }
   }
@@ -111,16 +107,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 1.25rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    cursor: pointer;
   }
 
   // .swiper-slide__user-icon
 
   &__user-icon {
     display: block;
-    width: 128px;
-    height: 128px;
-    margin-bottom: 16px;
+    width: 8rem;
+    height: 8rem;
+
+    margin: 0 auto 1rem;
   }
 
   // .swiper-slide__user-name
@@ -146,10 +148,16 @@
   // .swiper-slide__card-star
 
   &__card-star {
-    width: 14px;
-    height: 14px;
-    color: $color-second-text;
-    margin-bottom: 16px;
+    width: 0.875rem;
+    height: 0.875rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    --star-fill: #252b42;
+    --star-stroke: #ffffff;
+    &--active {
+      --star-fill: #23856d;
+      --star-stroke: #23856d;
+    }
   }
 }
 .swiper-slider {
@@ -160,17 +168,16 @@
     font-family: "Open Sans", sans-serif;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    font-size: 20px;
-    max-width: 805px;
+    font-size: 1.25rem;
+    max-width: 50.3125rem;
   }
 }
-.swiper-pagination {
-}
+
 .slider .swiper-pagination-bullet {
-  background: $color-bg-tonal; // новый цвет для неактивных
-  width: 16px;
-  height: 16px;
-  opacity: 1; // если хочешь не прозрачные
+  background: $color-bg-tonal;
+  width: 1rem;
+  height: 1rem;
+  opacity: 1;
   transform: scale(0.8);
   transition: 0.3s;
 }
@@ -184,14 +191,10 @@
 .slider .swiper-pagination {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 0.5rem;
   @include adaptiveValue(margin-top, 150, 50);
   position: relative;
-  // bottom: 20px;
 }
 .swiper-wrapper {
   transition: height 0.1s ease;
-}
-.swiper-slide__body {
-  padding-bottom: 2rem; // отступ под контент, чтобы не заезжал на пагинацию
 }

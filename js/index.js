@@ -92,7 +92,6 @@ function load() {
   swiper.on("slideChange", () => {
     bullets.forEach((b) => b.classList.remove("active"));
 
-    // активная точка (3 варианта)
     const index = swiper.realIndex % 3;
     bullets[index].classList.add("active");
   });
